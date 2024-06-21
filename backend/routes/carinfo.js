@@ -3,6 +3,8 @@ const {
     createCarinfo,
     getCarinfo,
     getSingleCarinfo,
+    deleteCarinfo,
+    updateCarinfo,
 } = require('../controllers/carinfoController')
 
 const router = express.Router()
@@ -17,13 +19,9 @@ router.get('/:id', getSingleCarinfo)
 router.post('/', createCarinfo)
 
 //DELETE a carinfo
-router.delete('/:id', (req, res) => {
-    res.json({mssg: 'DELETE carinfo'})
-})
+router.delete('/:id', deleteCarinfo)
 
 //UPDATE a carinfo
-router.patch('/:id', (req, res) => {
-    res.json({mssg: 'UPDATE carinfo'})
-})
+router.patch('/:id', updateCarinfo)
 
 module.exports = router
